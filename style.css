@@ -1,0 +1,106 @@
+:root {
+  --text-color: #f0f4f5;
+  --background-color: #263343;
+  --accent-color: coral;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro';
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.navbar {
+  display: flex;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+}
+
+.navbar__logo {
+  padding: 8px 15px;
+}
+
+.navbar__logo i {
+  color: var(--accent-color);
+}
+
+.navbar__menu {
+  display: flex;
+  padding-left: 0px;
+  list-style: none;
+}
+
+.navbar__menu li {
+  padding: 8px 15px;
+  border-radius: 4px;
+}
+
+.navbar__menu li:hover {
+  background-color: var(--accent-color);
+}
+
+.navbar__icons {
+  padding: 8px 0px;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  cursor: pointer;
+}
+
+.navbar__icons i {
+  padding: 8px 10px;
+}
+
+.toggle-bar {
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* For small screen */
+@media screen and (max-width: 780px) {
+  .toggle-bar {
+    display: inline;
+  }
+
+  .navbar {
+    display: block;
+  }
+
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    align-content: flex-start;
+    text-align: center;
+  }
+
+  /* Fill in an entire line so that user can click on any space */
+  .navbar__menu a {
+    display: block;
+  }
+
+  /* Icons */
+  .navbar__icons {
+    display: none;
+    justify-content: center;
+  }
+
+  /* When toggle-bar is clicked - active state   */
+  .navbar__menu.active,
+  .navbar__icons.active {
+    display: flex;
+  }
+}
